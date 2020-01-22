@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -36,7 +37,10 @@ namespace Lab1
         private void Spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             var testId = JSONHelper.TestsList[e.Position].Id;
-        }
+
+            Intent elem1 = new Intent(this, typeof(Questionnaire));
+            StartActivity(elem1);
+    }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
