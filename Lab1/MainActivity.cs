@@ -28,19 +28,22 @@ namespace Lab1
 
             JSONHelper.LoadJson(this);
 
-            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner1);
+            //Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner1); 
+            ListView testSelection = FindViewById<ListView>(Resource.Id.listViewtest);
             PopulateTests();
-            spinner.ItemSelected += Spinner_ItemSelected;
+            testSelection.ItemClick += TestSelection_ItemClick;    
+            //spinner.SetSelection(0, false);
+            //spinner.ItemSelected += Spinner_ItemSelected;
             
         }
 
-        private void Spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        private void TestSelection_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var testId = JSONHelper.TestsList[e.Position].Id;
 
             Intent elem1 = new Intent(this, typeof(Questionnaire));
             StartActivity(elem1);
-    }
+        }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -74,18 +77,24 @@ namespace Lab1
 
         private void PopulateTests()
         {
-            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner1);
+            //Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner1);
+            ListView listView = FindViewById<ListView>(Resource.Id.listViewtest);
 
-            ArrayAdapter<Tests> testAdapter = new ArrayAdapter<Tests>(this, Android.Resource.Layout.SimpleSpinnerItem);
+            ArrayAdapter<Tests> testAdapter = new ArrayAdapter<Tests>(this, Android.Resource.Layout.SimpleListItem1);
+            
+            
 
             foreach (Tests test in JSONHelper.TestsList)
             {
                 testAdapter.Add(test.Name);
             }
 
-            testAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinner.Adapter = testAdapter;
+            //testAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+
+            listView.Adapter = testAdapter;
         }
+
+      
     }
 }
 
