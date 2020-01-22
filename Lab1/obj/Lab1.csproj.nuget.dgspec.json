@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/Joseph/Projects/Lab1/Lab1/Lab1.csproj": {}
+  },
+  "projects": {
+    "/Users/Joseph/Projects/Lab1/Lab1/Lab1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/Joseph/Projects/Lab1/Lab1/Lab1.csproj",
+        "projectName": "Lab1",
+        "projectPath": "/Users/Joseph/Projects/Lab1/Lab1/Lab1.csproj",
+        "packagesPath": "/Users/Joseph/.nuget/packages/",
+        "outputPath": "/Users/Joseph/Projects/Lab1/Lab1/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/Joseph/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid90"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid90": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid90": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Xamarin.Android.Support.Core.Utils": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.CustomTabs": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}
