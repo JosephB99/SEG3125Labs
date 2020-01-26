@@ -42,6 +42,7 @@ namespace Lab1
             var testId = JSONHelper.TestsList[e.Position].Id;
 
             Intent elem1 = new Intent(this, typeof(Questionnaire));
+            elem1.PutExtra("TESTID", testId);
             StartActivity(elem1);
         }
 

@@ -45,5 +45,6 @@ namespace Lab1
         public int Id { get; set; }
         public string Body { get; set; }
         public int QuestionId { get; set; }
+        public bool Correct { get; set; }
     }
 }
