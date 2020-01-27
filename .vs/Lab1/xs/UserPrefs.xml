@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{3A39E478-BA54-492C-A6B1-1D60A4104CC5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Lab1/Settings.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Lab1/JSONHelper.cs">
     <Files>
-      <File FileName="Lab1/MainActivity.cs" Line="44" Column="68" />
+      <File FileName="Lab1/MainActivity.cs" Line="61" Column="47" />
       <File FileName="Lab1/Questionnaire.cs" Line="25" Column="1" />
       <File FileName="Lab1/Assets/db.json" Line="1" Column="1" />
-      <File FileName="Lab1/JSONHelper.cs" />
-      <File FileName="Lab1/Resources/layout/content_main.xml" />
-      <File FileName="Lab1/Resources/layout/settingsActivity.xml" Line="1" Column="1" />
-      <File FileName="Lab1/Settings.cs" Line="1" Column="1" />
+      <File FileName="Lab1/JSONHelper.cs" Line="20" Column="52" />
+      <File FileName="Lab1/Resources/layout/content_main.xml" Line="1" Column="1" />
+      <File FileName="Lab1/Resources/layout/settingsActivity.xml" Line="14" Column="20" />
+      <File FileName="Lab1/Settings.cs" Line="14" Column="66" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,11 +17,20 @@
               <Node name="References" expanded="True" />
               <Node name="Resources" expanded="True">
                 <Node name="drawable" expanded="True" />
-                <Node name="layout" expanded="True" />
+                <Node name="layout" expanded="True">
+                  <Node name="settingsActivity.xml" selected="True" />
+                </Node>
               </Node>
-              <Node name="Settings.cs" selected="True" />
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>QuestionID</Value>
+          <Value>TestQuestions.Count</Value>
+          <Value>QuestionID</Value>
+          <Value>JSONHelper.QuestionsList</Value>
         </State>
       </Pad>
     </Pads>
