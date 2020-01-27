@@ -17,6 +17,7 @@
      android:id="@+id/QuestionCountView"/>
 
     <EditText
+     android:inputType="text"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:layout_toRightOf="@+id/QuestionCountView"
@@ -32,6 +33,7 @@
      android:id="@+id/PassGradeView"/>
 
     <EditText
+        android:inputType="text"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:layout_toRightOf="@+id/PassGradeView"
