@@ -1597,11 +1597,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Joseph/Projects/Lab1/Lab1/Lab1.csproj",
+      "projectUniqueName": "/Users/Joseph/Desktop/SchoolWork/uOttawa/Fifth_Year/SEG3125/Lab1Repo/Lab1/Lab1.csproj",
       "projectName": "Lab1",
-      "projectPath": "/Users/Joseph/Projects/Lab1/Lab1/Lab1.csproj",
+      "projectPath": "/Users/Joseph/Desktop/SchoolWork/uOttawa/Fifth_Year/SEG3125/Lab1Repo/Lab1/Lab1.csproj",
       "packagesPath": "/Users/Joseph/.nuget/packages/",
-      "outputPath": "/Users/Joseph/Projects/Lab1/Lab1/obj/",
+      "outputPath": "/Users/Joseph/Desktop/SchoolWork/uOttawa/Fifth_Year/SEG3125/Lab1Repo/Lab1/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

@@ -57,6 +57,8 @@ namespace Lab1
             int id = item.ItemId;
             if (id == Resource.Id.action_settings)
             {
+                Intent settingsIntent = new Intent(this, typeof(Settings));
+                StartActivity(settingsIntent);
                 return true;
             }
 

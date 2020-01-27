@@ -1,6 +1,12 @@
 Lab1.MainActivity, Lab1;crc6486d73167960fe62e.MainActivity
 Lab1.MainActivity;crc6486d73167960fe62e.MainActivity
 lab1.MainActivity;crc6486d73167960fe62e.MainActivity
+Lab1.Questionnaire, Lab1;crc6486d73167960fe62e.Questionnaire
+Lab1.Questionnaire;crc6486d73167960fe62e.Questionnaire
+lab1.Questionnaire;crc6486d73167960fe62e.Questionnaire
+Lab1.Settings, Lab1;crc6486d73167960fe62e.Settings
+Lab1.Settings;crc6486d73167960fe62e.Settings
+lab1.Settings;crc6486d73167960fe62e.Settings
 Android.Support.V4.View.AsyncLayoutInflater+IOnInflateFinishedListenerImplementor, Xamarin.Android.Support.AsyncLayoutInflater;mono.android.support.v4.view.AsyncLayoutInflater_OnInflateFinishedListenerImplementor
 Android.Support.V4.View.AsyncLayoutInflater.IOnInflateFinishedListenerImplementor;mono.android.support.v4.view.AsyncLayoutInflater_OnInflateFinishedListenerImplementor
 mono.android.support.v4.view.AsyncLayoutInflater_OnInflateFinishedListenerImplementor;mono.android.support.v4.view.AsyncLayoutInflater_OnInflateFinishedListenerImplementor

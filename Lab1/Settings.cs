@@ -26,9 +26,9 @@ namespace Lab1
 
             EditText QuestionCntText = FindViewById<EditText>(Resource.Id.QuestionCountText);
             EditText PassGrdText = FindViewById<EditText>(Resource.Id.PassGradeText);
-            EditTxt1 = QuestionCntText.getText().toString();
-            EditTxt2 = PassGrdText.getText().toString();
-            if (EditTxt1.matches("") & EditTxt2.matches(""))
+            string EditTxt1 = QuestionCntText.Text.ToString();
+            string EditTxt2 = PassGrdText.Text.ToString();
+            if (string.IsNullOrEmpty(EditTxt1) & string.IsNullOrEmpty(EditTxt2))
             {
                 return;
             }
@@ -44,9 +44,9 @@ namespace Lab1
         private void SaveBtnClick(object sender, EventArgs e)
         {
             EditText QuestionCntText = FindViewById<EditText>(Resource.Id.QuestionCountText);
-            NoOfQuestions = Int32.Parse(QuestionCntText.getText());
+            NoOfQuestions = int.Parse(QuestionCntText.Text.ToString());
             EditText PassGrdText = FindViewById<EditText>(Resource.Id.PassGradeText);
-            PassingGrade = Int32.Parse(PassGrdText.getText().toString());
+            PassingGrade = int.Parse(PassGrdText.Text.ToString());
 
         }
 

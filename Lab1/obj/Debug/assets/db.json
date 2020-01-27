@@ -2,40 +2,107 @@
   "tests": [
     {
       "id": 1,
-      "name": "OCSP"
+      "name": "Capitals of the World"
     },
     {
       "id": 2,
-      "name": "CEH"
+      "name": "Sample Test 2"
     }
   ],
   "questions": [
+
+    //Question for test 1
     {
       "id": 1,
-      "title": "question 1",
+      "title": "What is the capital of Canada?",
       "testId": 1
     },
     {
       "id": 2,
-      "title": "question 2",
+      "title": "What is the capital of the U.S.A?",
       "testId": 1
     },
     {
       "id": 3,
-      "title": "question 3",
+      "title": "This is a sample question 1",
+      "testId": 2
+    },
+    {
+      "id": 4,
+      "title": "This is a sample question 2",
       "testId": 2
     }
   ],
   "choices": [
+
+    //Choices for question 1 
     {
       "id": 1,
-      "body": "this is choice a",
-      "questionId": 1
+      "body": "Toronto",
+      "questionId": 1,
+      "correct": false
     },
     {
       "id": 2,
-      "body": "this is choice b",
-      "questionId": 1
+      "body": "Ottawa",
+      "questionId": 1,
+      "correct": true
+    },
+    {
+      "id": 3,
+      "body": "Edmonton",
+      "questionId": 1,
+      "correct": false
+    },
+    {
+      "id": 4,
+      "body": "Montreal",
+      "questionId": 1,
+      "correct": false
+    },
+
+    //Choices for question 2
+    {
+      "id": 5,
+      "body": "Washington",
+      "questionId": 2,
+      "correct": true
+    },
+    {
+      "id": 6,
+      "body": "L.A",
+      "questionId": 2,
+      "correct": false
+    },
+    {
+      "id": 7,
+      "body": "Las Vegas",
+      "questionId": 2,
+      "correct": false
+    },
+    {
+      "id": 8,
+      "body": "New York",
+      "questionId": 2,
+      "correct": false
+    },
+    {
+      "id": 9,
+      "body": "Sample choice 1 (false answer)",
+      "questionId": 3,
+      "correct": false
+    },
+    {
+      "id": 10,
+      "body": "Sample choice 2 (correct answer)",
+      "questionId": 3,
+      "correct": true
+    },
+    {
+      "id": 11,
+      "body": "Sample choice 1 (only answer)",
+      "questionId": 4,
+      "correct": true
     }
   ]
 }
