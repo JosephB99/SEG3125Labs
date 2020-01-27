@@ -95,7 +95,7 @@ namespace Lab1
 
 
             TextView questionTitleText = FindViewById<TextView>(Resource.Id.TxtQuestionTitle);
-            questionTitleText.Text = "Question " + QuestionID;
+            questionTitleText.Text = JSONHelper.QuestionsList.Find(x => x.Id.Equals(QuestionID)).Title;
 
             AddChoices();
 
