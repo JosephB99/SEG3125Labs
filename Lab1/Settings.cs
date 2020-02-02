@@ -16,7 +16,7 @@ namespace Lab1
     {
         private Button SaveButton;
         private int NoOfQuestions;
-        private int PassingGrade;
+        public static int PassingGrade = 50;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

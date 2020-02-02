@@ -21,7 +21,8 @@ namespace Lab1
         private List<Choices> TestChoices;
         private List<Questions> TestQuestions;
         private int QuestionID;
-        private int CorrectAnswers = 0;
+        private int CorrectAnswers;
+        protected static double FinalScore;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -68,8 +69,10 @@ namespace Lab1
 
                 if (TestCompleted)
                 {
-                    NextButton.Text = "test completed, num correct = " + CorrectAnswers + "/" + TestQuestions.Count;
-                    NextButton.Enabled = false;
+                    Intent summaryPage = new Intent(this, typeof(Summary));
+                    summaryPage.PutExtra("CORRECT_ANSWERS", CorrectAnswers);
+                    summaryPage.PutExtra("NUM_OF_QUESTIONS", TestQuestions.Count);
+                    StartActivity(summaryPage);
                     return;
                 }
 
