@@ -20,7 +20,7 @@ namespace Lab1
         private Button NextButton;
         private List<Choices> TestChoices;
         private List<Questions> TestQuestions;
-        private int QuestionID = 1;
+        private int QuestionID;
         private int CorrectAnswers = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -49,7 +49,6 @@ namespace Lab1
 
         private void NextButton_Click(object sender, EventArgs e)
         {
-
             RadioGroup radioGroupChoices = FindViewById<RadioGroup>(Resource.Id.radioGroup1);
             var selectedChoice = radioGroupChoices.CheckedRadioButtonId;
 
@@ -74,7 +73,6 @@ namespace Lab1
                     return;
                 }
 
-                QuestionID++;
                 UpdateAll();
             }
         }
@@ -83,27 +81,25 @@ namespace Lab1
         {
             TextView testTitleText = FindViewById<TextView>(Resource.Id.TxtTestTitle);
             testTitleText.Text = JSONHelper.TestsList[TestID - 1].Name;
+            QuestionID = JSONHelper.QuestionsList.Where(x => x.TestId.Equals(TestID)).FirstOrDefault().Id;
         }
 
         private void UpdateAll()
         {
-            if (QuestionID == TestQuestions.Count)
+            if (QuestionID == TestQuestions.FindLast(x => (x.TestId.Equals(TestID))).Id)
             {
                 NextButton.Text = "Submit";
                 TestCompleted = true;
             }
-
-
             TextView questionTitleText = FindViewById<TextView>(Resource.Id.TxtQuestionTitle);
-            questionTitleText.Text = JSONHelper.QuestionsList.Find(x => x.Id.Equals(QuestionID)).Title;
-
+            questionTitleText.Text = JSONHelper.QuestionsList.Find(x => (x.Id.Equals(QuestionID) && x.TestId.Equals(TestID))).Title;
             AddChoices();
-
+            QuestionID++;
         }
 
         private void AddChoices()
         {
-            TestChoices = JSONHelper.ChoicesList.FindAll(x => x.QuestionId.Equals(QuestionID));
+            TestChoices = JSONHelper.ChoicesList.FindAll(x => (x.QuestionId.Equals(QuestionID)));
 
             RadioGroup radioGroupChoices = FindViewById<RadioGroup>(Resource.Id.radioGroup1);
             radioGroupChoices.ClearCheck();
