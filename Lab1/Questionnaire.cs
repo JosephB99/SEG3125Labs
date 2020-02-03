@@ -30,9 +30,13 @@ namespace Lab1
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.questionaire);
 
-
             TestID = Intent.GetIntExtra("TESTID", 0);
-            TestQuestions = JSONHelper.QuestionsList.FindAll(x => x.TestId.Equals(TestID)).GetRange(0, Settings.NoOfQuestions);
+            TestQuestions = JSONHelper.QuestionsList.FindAll(x => x.TestId.Equals(TestID));
+
+            if (Settings.NoOfQuestions > 0  && Settings.NoOfQuestions < TestQuestions.Count) 
+            {
+                TestQuestions = TestQuestions.GetRange(0, Settings.NoOfQuestions);
+            }
 
             if (TestQuestions.Count == 0)
             {

@@ -17,7 +17,7 @@
      android:id="@+id/QuestionCountView"/>
 
     <EditText
-     android:inputType="text"
+     android:inputType="number"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:layout_below="@+id/QuestionCountView"
@@ -33,7 +33,7 @@
      android:id="@+id/PassGradeView"/>
 
     <EditText
-     android:inputType="text"
+     android:inputType="number"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:layout_below= "@+id/PassGradeView"

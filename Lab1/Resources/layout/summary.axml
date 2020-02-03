@@ -113,6 +113,16 @@
 	tools:showIn="@layout/summary"
 	android:animateLayoutChanges="false"
   >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TxtMessage"
+            android:textSize="50px"
+            android:text="TxtMessage"
+            android:textAlignment="center"
+            android:paddingTop="50px" />
+
         <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

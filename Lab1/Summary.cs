@@ -51,14 +51,16 @@ namespace Lab1
             textNumQuestions.Text = NumOfQuestions.ToString();
 
             TextView textPassingGrade = FindViewById<TextView>(Resource.Id.TxtPassingGrade);
-            textPassingGrade.Text = Settings.PassingGrade.ToString();
+            textPassingGrade.Text = Settings.PassingGrade.ToString() + "%";
 
             TextView textTotal = FindViewById<TextView>(Resource.Id.TxtTotalScore);
             textTotal.Text = FinalScore.ToString() + "%";
 
             TextView textPassOrFail = FindViewById<TextView>(Resource.Id.TxtPassOrFail);
-            textPassOrFail.Text = (FinalScore >= Settings.PassingGrade) ? "Pass" : "Fail"; 
+            textPassOrFail.Text = (FinalScore >= Settings.PassingGrade) ? "Pass" : "Fail";
 
+            TextView textMessage = FindViewById<TextView>(Resource.Id.TxtMessage);
+            textMessage.Text = (FinalScore >= Settings.PassingGrade) ? "Congratulations, you did great!" : "Great effort, better luck next time.";
 
         }   
     }
