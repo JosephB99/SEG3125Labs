@@ -15,7 +15,7 @@ namespace Lab1
     public class Settings : AppCompatActivity
     {
         private Button SaveButton;
-        private int NoOfQuestions;
+        public static int NoOfQuestions;
         public static int PassingGrade = 50;
 
         protected override void OnCreate(Bundle savedInstanceState)
