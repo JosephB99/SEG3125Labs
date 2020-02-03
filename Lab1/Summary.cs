@@ -62,6 +62,7 @@ namespace Lab1
             TextView textMessage = FindViewById<TextView>(Resource.Id.TxtMessage);
             textMessage.Text = (FinalScore >= Settings.PassingGrade) ? "Congratulations, you did great!" : "Great effort, better luck next time.";
 
+
         }   
     }
 }

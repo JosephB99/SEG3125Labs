@@ -37,6 +37,15 @@
         android:layout_centerInParent="true"/>
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_centerInParent="true"
+        android:textSize="50px"
+        android:textAlignment="center"
+        android:id="@+id/TxtCorrect"
+        android:layout_above="@id/BtnNextQuestion"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 
-
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="50dp"
     android:paddingLeft="10dp"
-    android:paddingRight="10dp" >
+    android:paddingRight="10dp"
+    android:id="@+id/MainTable">
+
 
         <TextView
         android:layout_width="match_parent"
@@ -102,7 +103,6 @@
             android:id="@+id/TxtPassOrFail"
             />
     </TableRow>
-
 <RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -129,8 +129,9 @@
         android:text="Homepage"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:id="@+id/BtnHome"
-        />
+            android:id="@+id/BtnHome" />
 
 </RelativeLayout>
+
 </TableLayout>
+

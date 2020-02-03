@@ -9,6 +9,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Lab1
 {
@@ -52,10 +53,11 @@ namespace Lab1
             UpdateAll();
         }
 
-        private void NextButton_Click(object sender, EventArgs e)
+        private async void NextButton_Click(object sender, EventArgs e)
         {
             RadioGroup radioGroupChoices = FindViewById<RadioGroup>(Resource.Id.radioGroup1);
             var selectedChoice = radioGroupChoices.CheckedRadioButtonId;
+
 
             if (selectedChoice == -1)
             {
@@ -64,12 +66,19 @@ namespace Lab1
             else
             {
                 Choices correctAnswer = TestChoices.Find(x => x.Correct.Equals(true));
+                TextView correctText = FindViewById<TextView>(Resource.Id.TxtCorrect);
 
                 if (correctAnswer.Id == selectedChoice)
                 {
                     CorrectAnswers++;
+                    correctText.Text = "Correct!"; 
+                } else
+                {
+                    correctText.Text = "Incorrect, the correct answer is " + correctAnswer.Body;
                 }
 
+                NextButton.Enabled = false;
+                await PutTaskDelay();
 
                 if (TestCompleted)
                 {
@@ -102,6 +111,9 @@ namespace Lab1
             questionTitleText.Text = JSONHelper.QuestionsList.Find(x => (x.Id.Equals(QuestionID) && x.TestId.Equals(TestID))).Title;
             AddChoices();
             QuestionID++;
+            TextView correctText = FindViewById<TextView>(Resource.Id.TxtCorrect);
+            correctText.Text = "";
+            NextButton.Enabled = true;
         }
 
         private void AddChoices()
@@ -141,6 +153,10 @@ namespace Lab1
             alert.Show();
         }
 
+        private async Task PutTaskDelay() { 
+        
+            await Task.Delay(2000);
+        }
 
     }
 }
