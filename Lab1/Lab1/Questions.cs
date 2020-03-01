@@ -1,0 +1,4 @@
+﻿namespace Lab1
+{
+
+}

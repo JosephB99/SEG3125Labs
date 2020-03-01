@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 .Lab1/Lab1/bin/
 .Lab1/Lab1/obj/
 .Lab1/Lab1/obj/Debug/
 .vs/Lab1/xs/
+=======
+Lab1/Lab1/bin/Debug/
+Lab1/Lab1/bin/
+Lab1/Lab1/obj/
+Lab1/Lab1/obj/Debug/
+
+Lab2/Lab2/bin/Debug/
+Lab2/Lab2/bin/
+Lab2/Lab2/obj/
+Lab2/Lab2/obj/Debug/
+>>>>>>> 560373826f6b06c57ea2267d969a56de2daa9929
