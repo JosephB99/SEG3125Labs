@@ -1,0 +1,36 @@
+﻿@page
+@model TechniqueModel
+@{
+    ViewData["Title"] = TechniqueModel.Name;
+}
+
+        <div class="w3-container">
+            <div class="w3-display-container" style="height: 70px;">
+                <div class="w3-display-topmiddle">
+                    <h2 class="display-4 text-center w3-center" id="techniqueName">@TechniqueModel.Name</h2>
+                </div>
+                <div class="w3-display-topright">
+                    <button class="w3-button w3-xlarge w3-circle w3-teal w3-right">+</button>
+                </div> 
+            </div>
+        </div>
+<hr />
+<div class="w3-container">
+    <table class="w3-table-all">
+        <tr>
+            <th>Tactic Used</th>
+        </tr>
+        <tr>
+            <td>@TechniqueModel.Tactic</td>
+        </tr>
+    </table>
+    <table class="w3-table-all">
+        <tr>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>@Html.Raw(System.Web.HttpUtility.HtmlDecode(@TechniqueModel.Description))</td>
+        </tr>
+    </table>
+
+</div>

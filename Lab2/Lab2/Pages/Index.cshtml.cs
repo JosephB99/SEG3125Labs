@@ -19,7 +19,7 @@ namespace Lab2.Pages
 
         public void OnGet()
         {
-
+            JSONTypes.LoadJson();
         }
     }
 }
