@@ -4,6 +4,8 @@
     ViewData["Title"] = "Create";
 }
 
+<script src="~/js/selectAll.js"></script>
+
 <link rel="stylesheet" href="~/css/create.css" />
 
 <div style="background: @ViewData["Col"]; border-radius: 5px; display: @ViewData["ShowVal"];">
@@ -28,10 +30,13 @@
             <legend>Tactics Used</legend>
 
             <p>
+                <label><input type="checkbox" id="checkAll" onclick="toggle(this)"/> Select / Unselect All</label><br/>
+                <br/>
+
                 @{
                     foreach (var tactic in JSONTypes.TacticNames)
                     {
-                        <label><input type="checkbox" value="@tactic.Key.ToString()" name="@tactic.Key.ToString()" /> @tactic.Value.Value</label><br />
+                        <label><input type="checkbox" class="chk" value="@tactic.Key.ToString()" name="@tactic.Key.ToString()" /> @tactic.Value.Value</label><br />
                         }
                     }
             </p>
@@ -43,6 +48,6 @@
         </fieldset>
         
 
-        <input type="submit" asp-page-handler="Create" value="Submit">
+        <input type="submit" asp-page-handler="Create" value="Create Pattern">
     </form>
 </div>
