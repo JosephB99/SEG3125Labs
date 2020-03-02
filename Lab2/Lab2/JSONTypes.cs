@@ -17,6 +17,7 @@ namespace Lab2
         public static Dictionary<string, List<KillChainPhase>> MatrixObjs { get; set; }
         public static Dictionary<string, List<string>> PatternsUsed { get; set; }
         public static Dictionary<string, List<string>> PatternTactics { get; set; }
+        public static Dictionary<string, string> Descriptions { get; set; }
         public static MatrixObject obj { get; private set; }
         private static IEnumerable<string> TacticIDs { get; set; }
 
@@ -66,8 +67,15 @@ namespace Lab2
                 PatternsUsed.Add(tacticShortName, 
                     PatternTactics.Where(x => x.Value.Contains(tacticShortName)).Select(y => y.Key).ToList());
             }
+
+            Descriptions = new Dictionary<string, string>();
+            foreach (var pattern in PatternTactics.Keys)
+            {
+                Descriptions.Add(pattern, obj.Objects.Where(x => x.name == pattern).Select(y => y.Description).First());
+            }
         }
     }
+
 
     public class MatrixObject
     {
