@@ -13,6 +13,7 @@ namespace Lab2
     {
         public static void Main(string[] args)
         {
+            JSONTypes.LoadJson();
             CreateHostBuilder(args).Build().Run();
         }
 

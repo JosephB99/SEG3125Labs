@@ -7,13 +7,13 @@
 <div class="text-center">
     <h1 class="display-4">Attack Matrix</h1>
     <form method="post">
-    <table>
+    <table class="w3-table">
         <thead>
             <tr>
                 @{
                     foreach (var tactic in JSONTypes.TacticNames.Values)
                     {
-                        <td style="padding: 5px; border: 1px solid black; font-size:12px; background-color: darkgray; color: black;">@tactic.Value</td>
+                        <td style="padding: 5px; text-align:center; border: 1px solid black; font-size:12px; background-color: darkgray; color: black;">@tactic.Value</td>
                     }
                 }
             </tr>
@@ -34,12 +34,14 @@
                                             continue;
                                         }
 
-                        <td style="font-size:10px; border:1px solid gray; background-color: white;">
+                        <td style="font-size:10px; border:1px solid gray; background-color: white; text-align: center;">
 
-                            <a href="/Technique?name=@JSONTypes.PatternsUsed.ElementAt(x).Value.ElementAt(i)&tactic=@JSONTypes.PatternsUsed.ElementAt(x).Key">@JSONTypes.PatternsUsed.ElementAt(x).Value.ElementAt(i)</a>
+                            <a href="/Technique?name=@JSONTypes.PatternsUsed.ElementAt(x).Value.ElementAt(i)&tactic=@JSONTypes.PatternsUsed.ElementAt(x).Key" style="color: #0366d6">
+                                @JSONTypes.PatternsUsed.ElementAt(x).Value.ElementAt(i)
+                            </a>
                         </td>
                                     }
-                                    catch(Exception e)
+                                    catch(Exception _)
                                     {
                                        
                                     }
