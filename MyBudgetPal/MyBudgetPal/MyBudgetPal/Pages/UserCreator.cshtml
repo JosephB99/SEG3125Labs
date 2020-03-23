@@ -1,0 +1,86 @@
+﻿@page
+@model MyBudgetPal.Pages.UserCreatorModel
+@{
+}
+
+
+<div class="container-fluid text-center">
+    <img src="~/logo.png" />
+</div>
+
+<div class="container-fluid position-relative text-center">
+
+    <div class="row">
+        <div class="form-group col-md-12 mx-auto">
+            <h3 class="display-4">
+                Welcome to MyBudgetPal, {userFName}. <br />
+                <small class="text-muted">Let's get you started.</small>
+            </h3>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="container-fluid text-center" id="container-step1">
+
+        <form class="needs-validation" novalidate>
+
+            <div class="form-row">
+                <div class="form-group col-md-12 mx-auto">
+                    <label for="validationBudget" class="font-weight-bold col-form-label-lg">
+                        What's your desired budget?
+                    </label>
+                    <p class="lead">
+                        A budget is a set amount that will be used to cap your expenses to notify you if you're going over or staying under. <span class="small font-weight-bold">*</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-group col-md-3 mx-auto">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">$</div>
+                    </div>
+                    <input type="number" class="form-control form-control-lg" id="validationBudget" placeholder="500" required>
+                </div>
+            </div>
+            <br/>
+            <div class="form-row">
+                <div class="form-group col-md-2 mx-auto text-center">
+                    <button id="btnNextStep1" class="btn btn-primary" type="submit" onclick="handleStep1()">Continue</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <hr />
+
+    <div class="container-fluid text-center" id="container-instructions">
+        <div class="form-row">
+            <div class="form-group col-md-12 mx-auto text-center">
+                <p class="small font-weight-bold">*  You can change this at any time in the settings menu.</p>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
