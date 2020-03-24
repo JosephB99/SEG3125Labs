@@ -75,7 +75,7 @@
     </div>
 </div>
 
-<div class="container-fluid" id="successContainer" hidden="hidden">
+<div class="container-fluid alert alert-success" id="successContainer" hidden="hidden">
     <div class="row">
         <div class="col-md-6 mx-auto text-center">
             <label id="successMsg" class="font-weight-bold" style="color: darkgreen;">Account successfully created!</label>
@@ -90,7 +90,7 @@
 
     <div class="row">
         <div class="col-md-6 mx-auto text-center">
-            <a href="/Index" class="small">Click here if you are not automatically redirected.</a>
+            <a href="/UserCreator" class="small">Click here if you are not automatically redirected.</a>
         </div>
     </div>
 </div>
@@ -118,7 +118,7 @@
                         document.getElementById('btnCreate').style.cursor = 'not-allowed';
                         document.getElementById('btnLogin').setAttribute('hidden', 'hidden');
                         setTimeout(function () {
-                            window.location.href = "/Index";
+                            window.location.href = "/UserCreator";
                         }, 3000);
                     }
                     form.classList.add('was-validated');
