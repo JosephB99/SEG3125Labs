@@ -21,50 +21,174 @@
 
     <hr />
 
-    <div class="container-fluid text-center" id="container-step1">
+    <div class="container-fluid text-center" id="step1">
 
         <form class="needs-validation" novalidate>
 
             <div class="form-row">
-                <div class="form-group col-md-12 mx-auto">
-                    <label for="validationBudget" class="font-weight-bold col-form-label-lg">
-                        What's your desired budget?
-                    </label>
-                    <p class="lead">
-                        A budget is a set amount that will be used to cap your expenses to notify you if you're going over or staying under. <span class="small font-weight-bold">*</span>
-                    </p>
-                </div>
-            </div>
 
-            <div class="form-row">
-                <div class="input-group col-md-3 mx-auto">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">$</div>
+                <div class="col-md">
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12 mx-auto">
+                            <label for="validationBudget" class="font-weight-bold col-form-label-lg">
+                                What's your desired budget?
+                            </label>
+                            <p class="lead">
+                                A budget is a set amount that will be used to cap your expenses to notify you if you're going over or staying under. <span class="small font-weight-bold">*</span>
+                            </p>
+                        </div>
                     </div>
-                    <input type="number" class="form-control form-control-lg" id="validationBudget" placeholder="500" required>
-                </div>
-            </div>
-            <br/>
-            <div class="form-row">
-                <div class="form-group col-md-2 mx-auto text-center">
-                    <button id="btnNextStep1" class="btn btn-primary" type="submit" onclick="handleStep1()">Continue</button>
+
+                    <div class="form-row">
+                        <div class="input-group col-md-3 mx-auto">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">$</div>
+                            </div>
+                            <input type="number" class="form-control form-control-lg" id="validationBudget" placeholder="500" required>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="form-row">
+                        <div class="form-group col-md-2 mx-auto text-center">
+                            <button id="btnNextStep1" class="btn btn-primary btn-lg">Continue</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
+            <br />
         </form>
     </div>
 
-    <hr />
-
-    <div class="container-fluid text-center" id="container-instructions">
+    <div class="container-fluid" id="step2" style="display: none;">
         <div class="form-row">
-            <div class="form-group col-md-12 mx-auto text-center">
-                <p class="small font-weight-bold">*  You can change this at any time in the settings menu.</p>
+            <div class="col-md">
+                <div class="form-row">
+                    <div class="form-group col-md-12 mx-auto">
+                        <label for="validationBudget" class="font-weight-bold col-form-label-lg">
+                            What's your preferred budget cycle?
+                        </label>
+                        <p class="lead">
+                            A budget cycle is a period of time your budget will be tracked for. <span class="small font-weight-bold">*</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group col-md-3 mx-auto">
+                        <select class="form-control form-control-lg" id="validationBudget" placeholder="Weekly" required>
+                            <option>Weekly</option>
+                            <option>Bi-weekly</option>
+                            <option>Monthly</option>
+                            <option disabled>Custom (Coming Soon)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="form-row">
+                    <div class="form-group col-md-2 mx-auto text-center">
+                        <button id="btnNextStep2" onclick="showNextStep(3)" class="btn btn-primary btn-lg">Continue</button>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-2 mx-auto text-center">
+                        <button id="btnBackStep2" class="small btn btn-outline-secondary" onclick="showNextStep(1)">Back</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <br />
+    </div>
+
+    <div class="container-fluid" id="step3" style="display: none;">
+        <div class="form-row">
+            <div class="col-md">
+                <div class="form-row">
+                    <div class="form-group col-md-12 mx-auto">
+                        <label for="validationBudget" class="font-weight-bold col-form-label-lg">
+                            If you have any recurring expenses, you can enter them below.
+                        </label>
+                        <p class="lead">
+                            A recurring expense is an expense that is repeated after a certain amount of days. <span class="small font-weight-bold">*</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group col-md-4 mx-auto">
+
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Expense</div>
+                        </div>
+                        <input type="text" placeholder="Phone bill" class="form-control form-control-lg" />
+
+                    </div>
+                    <div class="input-group col-md-4 mx-auto">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Cost ($)</div>
+                        </div>
+                        <input type="number" class="form-control form-control-lg" id="validationBudget" placeholder="500" required>
+                    </div>
+
+                    <div class="input-group col-md-4 mx-auto">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Repeated every x day(s)</div>
+                        </div>
+                        <input type="number" class="form-control form-control-lg" placeholder="30" required />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <p class="lead">You'll only be able to add one here, but you can add as many recurring expenses as you'd like in the settings menu.</p>
+                </div>
+
+                <br />
+
+                <div class="form-row">
+                    <div class="form-group col-md-12 mx-auto text-center">
+                        <button id="btnNextStep3" class="btn btn-primary btn-lg">Complete registration</button>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-2 mx-auto text-center">
+                        <button id="btnBackStep3" class="small btn btn-outline-secondary" onclick="showNextStep(2)">Back</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <br />
+</div>
+
+
+
+
+<hr />
+
+<div class="container-fluid text-center" id="container-instructions">
+    <div class="form-row">
+        <div class="form-group col-md-12 mx-auto text-center">
+            <p class="small font-weight-bold">*  You can change this at any time in the settings menu.</p>
+        </div>
+    </div>
+</div>
+
 <script>
+
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
         'use strict';
@@ -77,10 +201,36 @@
                     if (form.checkValidity() === false) {
                         event.preventDefault();
                         event.stopPropagation();
+                    } else {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        showNextStep(2);
                     }
                     form.classList.add('was-validated');
                 }, false);
             });
         }, false);
     })();
+
+    function showNextStep(num) {
+        switch (num) {
+            case 1:
+                $('#step3').hide();
+                $('#step2').hide();
+                $("#step1").fadeIn(1200);
+                break;
+            case 2:
+                $('#step1').hide();
+                $('#step3').hide();
+                $('#step2').fadeIn(1200);
+                break;
+            case 3:
+                $('#step1').hide();
+                $('#step2').hide();
+                $('#step3').fadeIn(1200);
+                break;
+            default:
+                break;
+        }
+    }
 </script>
