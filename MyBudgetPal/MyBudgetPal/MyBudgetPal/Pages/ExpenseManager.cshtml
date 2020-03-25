@@ -3,10 +3,392 @@
 @{
 }
 
+<style type="text/css">
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting:before,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_asc_disabled:after,
+    table.dataTable thead .sorting_asc_disabled:before,
+    table.dataTable thead .sorting_desc:after,
+    table.dataTable thead .sorting_desc:before,
+    table.dataTable thead .sorting_desc_disabled:after,
+    table.dataTable thead .sorting_desc_disabled:before {
+        bottom: .5em;
+    }
+</style>
+
 <div class="container-fluid text-center">
     <div class="row">
-        <div class="form-group col-md-12 mx-auto">
+        <div class="col-md-12 mx-auto">
             <h1 class="display-4">Expense Manager</h1>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <p class="lead">Expenses for the period of:</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group input-daterange col-md-6 mx-auto">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+            <input type="text" class="form-control form-control-lg" id="startdate" placeholder="First transaction">
+            <div class="input-group-addon"><p class="lead">&nbsp;to&nbsp;</p></div>
+            <input type="text" class="form-control form-control-lg" id="enddate" value="@DateTime.Now.ToString("yyyy/MM/dd")">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<hr />
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <table id="expenseTable" class="table table-striped table-bordered table-hover" style="width:100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">
+                            Expense
+                        </th>
+                        <th class="th-sm">
+                            Cost
+                        </th>
+                        <th class="th-sm">
+                            Date
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PS4 Console</td>
+                        <td>400$</td>
+                        <td>2020-01-01</td>
+                    </tr>
+                    <tr>
+                        <td>Groceries</td>
+                        <td>75$</td>
+                        <td>2020-02-05</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>Groceries</td>
+                        <td>75$</td>
+                        <td>2020-02-05</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>Groceries</td>
+                        <td>75$</td>
+                        <td>2020-02-05</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>Groceries</td>
+                        <td>75$</td>
+                        <td>2020-02-05</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>Groceries</td>
+                        <td>75$</td>
+                        <td>2020-02-05</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>Groceries</td>
+                        <td>75$</td>
+                        <td>2020-02-05</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>Groceries</td>
+                        <td>75$</td>
+                        <td>2020-02-05</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald's</td>
+                        <td>12$</td>
+                        <td>2020-03-09</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <h1 class="display-4">Quick add a new expense</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <p class="lead">Add a new expense quickly and easily below.</p>
+        </div>
+    </div>
+    <form class="needs-validation" novalidate>
+        <div class="row">
+            <div class="form-row">
+                <div class="input-group col-md-4 mx-auto">
+
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Expense</div>
+                    </div>
+                    <input type="text" placeholder="Food" id="validationExpense" class="form-control form-control-lg" required />
+
+                </div>
+                <div class="input-group col-md-4 mx-auto">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Cost ($)</div>
+                    </div>
+                    <input type="number" class="form-control form-control-lg" id="validationCost" placeholder="15" required>
+                </div>
+
+                <div class="input-group col-md-4 mx-auto">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Date</div>
+                    </div>
+                    <input type="text" class="form-control form-control-lg" id="validationDate" value="@DateTime.Now.ToString("yyyy/MM/dd")" required>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="form-group col-md-12 mx-auto text-center">
+                <button id="btnNextStep3" class="btn btn-success btn-lg">Add expense</button>
+            </div>
+        </div>
+    </form>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <button id="saveBtn" class="btn btn-primary btn-lg">Save</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+
+
+
+        $(function () {
+            var oTable = $('#expenseTable').DataTable({
+
+                "oLanguage": {
+                    "sSearch": "Quick find an expense:"
+                },
+                "scrollY": "350px",
+                "scrollCollapse": true,
+
+                fixedHeader: {
+                    header: true, //Table have header and footer
+                    footer: true
+                },
+                paging: false,
+                autoFill: true, // Autofills fields by dragging the blue dot at the bottom right of cells
+                responsive: true, //  Resize table
+                rowReorder: true, // Row can be reordered by dragging
+                select: true, // selecting rows, cells or columns
+                colReorder: true // Reorders columns
+            });
+
+
+
+
+            $("#startdate").datepicker({
+                changeYear: true,
+                changeMonth: true,
+                dateFormat: "yy-mm-dd",
+                "onSelect": function (date) {
+                    minDateFilter = new Date(date).getTime();
+                    oTable.draw();
+                }
+            }).keyup(function () {
+                minDateFilter = new Date(this.value).getTime();
+                oTable.draw();
+            });
+
+            $("#validationDate").datepicker({
+                changeYear: true,
+                changeMonth: true,
+                dateFormat: "yy-mm-dd"
+            });
+
+            $("#enddate").datepicker({
+                changeYear: true,
+                changeMonth: true,
+                dateFormat: "yy-mm-dd",
+                "onSelect": function (date) {
+                    maxDateFilter = new Date(date).getTime();
+                    oTable.draw();
+                }
+            }).keyup(function () {
+                maxDateFilter = new Date(this.value).getTime();
+                oTable.draw();
+            });
+
+        });
+
+
+        // Date range filter
+        minDateFilter = "";
+        maxDateFilter = "";
+
+        $.fn.dataTableExt.afnFiltering.push(
+            function (oSettings, aData, iDataIndex) {
+                if (typeof aData._date == 'undefined') {
+                    aData._date = new Date(aData[2]).getTime();
+                }
+
+                if (minDateFilter && !isNaN(minDateFilter)) {
+                    if (aData._date < minDateFilter) {
+                        return false;
+                    }
+                }
+
+                if (maxDateFilter && !isNaN(maxDateFilter)) {
+                    if (aData._date > maxDateFilter) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        );
+    });
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        var t = $('#expenseTable').DataTable();
+
+                        var expense = document.getElementById('validationExpense').value;
+                        var cost = document.getElementById('validationCost').value;
+                        var date = document.getElementById('validationDate').value;
+                        t.row.add([expense, cost, date]).draw(false);
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
