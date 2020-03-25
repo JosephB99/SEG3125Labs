@@ -65,7 +65,7 @@
         </form>
     </div>
 
-    <div class="container-fluid" id="step2" hidden="hidden">
+    <div class="container-fluid" id="step2" style="display: none;">
         <div class="form-row">
             <div class="col-md">
                 <div class="form-row">
@@ -111,7 +111,7 @@
         <br />
     </div>
 
-    <div class="container-fluid" id="step3" hidden="hidden">
+    <div class="container-fluid" id="step3" style="display: none;">
         <div class="form-row">
             <div class="col-md">
                 <div class="form-row">
@@ -215,19 +215,19 @@
     function showNextStep(num) {
         switch (num) {
             case 1:
-                document.getElementById('step1').removeAttribute('hidden');
-                document.getElementById('step2').setAttribute('hidden', 'hidden');
-                document.getElementById('step3').setAttribute('hidden', 'hidden');
+                $('#step3').hide();
+                $('#step2').hide();
+                $("#step1").fadeIn(1200);
                 break;
             case 2:
-                document.getElementById('step1').setAttribute('hidden', 'hidden');
-                document.getElementById('step3').setAttribute('hidden', 'hidden');
-                document.getElementById('step2').removeAttribute('hidden');
+                $('#step1').hide();
+                $('#step3').hide();
+                $('#step2').fadeIn(1200);
                 break;
             case 3:
-                document.getElementById('step3').removeAttribute('hidden');
-                document.getElementById('step1').setAttribute('hidden', 'hidden');
-                document.getElementById('step2').setAttribute('hidden', 'hidden');
+                $('#step1').hide();
+                $('#step2').hide();
+                $('#step3').fadeIn(1200);
                 break;
             default:
                 break;

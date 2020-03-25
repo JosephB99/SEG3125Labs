@@ -29,9 +29,22 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="d-flex flex-grow-1">
                 <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
-                <a class="navbar-brand d-none d-lg-inline-block" href="/Index">
-                    <i class="fa fa-home"></i>
-                </a>
+
+                @{
+                    if (Context.Request.Path.ToString().Contains("/Index") || Context.Request.Path.ToString().Equals("/") || Context.Request.Path.ToString().Contains("/Registration"))
+                    {
+                        <a class="navbar-brand d-none d-lg-inline-block" href="/Index">
+                            <img src="~/logo.png" class="img-thumbnail" style="width: 50%;" />
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="navbar-brand d-none d-lg-inline-block" href="/Home">
+                            <img src="~/logo.png" class="img-thumbnail" style="width: 50%;" />
+                        </a>
+                    }
+                }
+
                 <div class="w-100 text-right">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
                         <span class="navbar-toggler-icon"></span>
@@ -39,14 +52,29 @@
                 </div>
             </div>
             <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-                <ul class="navbar-nav ml-auto flex-nowrap">
-                    <li class="nav-item">
-                        <a href="/ExpenseManager" class="nav-link m-2 menu-item nav-active btn btn-outline-secondary btn-sm">Expense Manager</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/Index" class="nav-link m-2 menu-item btn btn-outline-danger btn-sm">Logout</a>
-                    </li>
-                </ul>
+                @{
+                    if (!Context.Request.Path.ToString().Contains("/Index") && !Context.Request.Path.ToString().Equals("/") && !Context.Request.Path.ToString().Contains("/Registration"))
+                    {
+                        <ul class="navbar-nav ml-auto flex-nowrap">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="nav-link m-2 menu-item nav-active btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                        Expenses
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a href="/ExpenseManager" class="nav-link m-2 menu-item nav-active btn btn-outline-secondary btn-sm">Expense Manager</a>
+                                        <a href="/RecurringExpenses" class="nav-link m-2 menu-item nav-active btn btn-outline-secondary btn-sm">Recurring Expenses</a>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Index" class="nav-link m-2 menu-item btn btn-outline-danger btn-sm">Logout</a>
+                            </li>
+                        </ul>
+                    }
+                }
+
             </div>
         </nav>
     </header>
