@@ -117,7 +117,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12 mx-auto">
                         <label for="validationBudget" class="font-weight-bold col-form-label-lg">
-                            If you have any recurring expenses, you can enter them below.
+                            If you have any recurring expenses, you can enter up to 3 below.
                         </label>
                         <p class="lead">
                             A recurring expense is an expense that is repeated after a certain amount of days. <span class="small font-weight-bold">*</span>
@@ -147,10 +147,66 @@
                         </div>
                         <input type="number" class="form-control form-control-lg" placeholder="30" required />
                     </div>
+
+                </div>
+                <br />
+                <div class="form-row" style="display: none;" id="expense2">
+                    <div class="input-group col-md-4 mx-auto">
+
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Expense</div>
+                        </div>
+                        <input type="text" placeholder="Phone bill" class="form-control form-control-lg" />
+
+                    </div>
+                    <div class="input-group col-md-4 mx-auto">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Cost ($)</div>
+                        </div>
+                        <input type="number" class="form-control form-control-lg" id="validationBudget2" placeholder="500" required>
+                    </div>
+
+                    <div class="input-group col-md-4 mx-auto">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Repeated every x day(s)</div>
+                        </div>
+                        <input type="number" class="form-control form-control-lg" placeholder="30" required />
+                    </div>
+
                 </div>
 
+                <br />
+
+                <div class="form-row" style="display: none;" id="expense3">
+                    <div class="input-group col-md-4 mx-auto">
+
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Expense</div>
+                        </div>
+                        <input type="text" placeholder="Phone bill" class="form-control form-control-lg" />
+
+                    </div>
+                    <div class="input-group col-md-4 mx-auto">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Cost ($)</div>
+                        </div>
+                        <input type="number" class="form-control form-control-lg" id="validationBudget3" placeholder="500" required>
+                    </div>
+
+                    <div class="input-group col-md-4 mx-auto">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Repeated every x day(s)</div>
+                        </div>
+                        <input type="number" class="form-control form-control-lg" placeholder="30" required />
+                    </div>
+                </div>
+
+                <br />
+
                 <div class="form-row">
-                    <p class="lead">You'll only be able to add one here, but you can add as many recurring expenses as you'd like in the settings menu.</p>
+                    <div class="form-group col-md-12 mx-auto">
+                        <button class="btn btn-outline-success rounded-circle" id="btnShowExpense"><i class="fa fa-plus"></i></button>
+                    </div>
                 </div>
 
                 <br />
@@ -187,7 +243,61 @@
     </div>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Registration Complete</h5>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid alert alert-success" id="successContainer">
+                    <div class="row">
+                        <div class="col-md-12 mx-auto text-center">
+                            <label id="successMsg" class="font-weight-bold" style="color: darkgreen;">Registration successfully completed!</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mx-auto text-center">
+                            <label id="successMsg" style="margin: 0;">You will automatically be redirected to the next page in 3 seconds.</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mx-auto text-center">
+                            <a href="/Home" class="small">Click here if you are not automatically redirected.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
+
+    $(document).ready(function () {
+
+        $('#btnShowExpense').click(function () {
+            if ($("#expense2").is(":visible")) {
+                $("#expense3").show();
+                $("#btnShowExpense").prop('disabled', true);
+                $("#btnShowExpense").css('cursor', 'not-allowed');
+            } else {
+                $("#expense2").show();
+            }
+        });
+
+        $('#btnNextStep3').click(function () {
+            $('#successModal').modal('show');
+            setTimeout(function () {
+                window.location.href = "/Home";
+            }, 3000);
+        });
+    });
 
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
