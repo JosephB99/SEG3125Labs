@@ -39,7 +39,7 @@
 
                 <div class="form-row ">
                     <div class="form-group col-md-6 mx-auto">
-                        <label for="validationCustom05" c>Password</label>
+                        <label for="validationCustom05" class="font-weight-bold">Password</label>
                         <input type="password" class="form-control" id="validationCustom05" placeholder="Change Password" required>
                     </div>
                 </div>
@@ -55,10 +55,22 @@
     </div>
 </div>
 
-<div class="container-fluid" id="successContainer" hidden="hidden">
-    <div class="row">
-        <div class="col-md-6 mx-auto text-center">
-            <label id="successMsg" class="font-weight-bold" style="color: darkgreen;">Saved!</label>
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Successfuly Saved</h5>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid alert alert-success" id="successContainer">
+                    <div class="row">
+                        <div class="col-md-12 mx-auto text-center">
+                            <label id="successMsg" class="font-weight-bold" style="color: darkgreen;">Changes made successfully saved!</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -66,6 +78,7 @@
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
+
         'use strict';
         window.addEventListener('load', function () {
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -79,8 +92,9 @@
                     } else {
                         event.preventDefault();
                         event.stopPropagation();
-                        document.getElementById('successContainer').removeAttribute('hidden');
-                        document.getElementById('savebtn').setAttribute('hidden', 'hidden');
+                        document.getElementById('savebtn').setAttribute('disabled', 'true');
+                        document.getElementById('savebtn').style.cursor = 'not-allowed';
+                        $('#successModal').modal('show');
                         setTimeout(function () {
                             window.location.href = "/Settings";
                         }, 3000);
@@ -90,4 +104,5 @@
             });
         }, false);
     })();
+
 </script>
