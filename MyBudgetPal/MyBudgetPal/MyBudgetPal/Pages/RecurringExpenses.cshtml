@@ -48,6 +48,9 @@
                         <th class="th-sm">
                             Frequency (days)
                         </th>
+                        <th class="th-sm">
+                            Delete
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,16 +58,19 @@
                         <td>Phone bill</td>
                         <td>85</td>
                         <td>30</td>
+                        <td><button class="btn small btn-danger delete"><i class="fa fa-times"></i></button></td>
                     </tr>
                     <tr>
                         <td>Car insurance</td>
                         <td>120</td>
                         <td>30</td>
+                        <td><button class="btn small btn-danger delete"><i class="fa fa-times"></i></button></td>
                     </tr>
                     <tr>
                         <td>Gas</td>
                         <td>50</td>
                         <td>14</td>
+                        <td><button class="btn small btn-danger delete"><i class="fa fa-times"></i></button></td>
                     </tr>
                 </tbody>
             </table>
@@ -118,16 +124,61 @@
 
         <div class="row">
             <div class="form-group col-md-12 mx-auto text-center">
-                <button id="btnNextStep3" class="btn btn-success btn-lg">Add expense</button>
+                <button id="btnNextStep3" class="btn btn-success btn-lg">Add expense and save</button>
             </div>
         </div>
     </form>
 
-    <hr />
+</div>
 
-    <div class="row">
-        <div class="col-md-12 mx-auto">
-            <button id="saveBtn" class="btn btn-primary btn-lg">Save</button>
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Successfuly Saved</h5>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid alert alert-success" id="successContainer">
+                    <div class="row">
+                        <div class="col-md-12 mx-auto text-center">
+                            <label id="successMsg" class="font-weight-bold" style="color: darkgreen;">Changes made successfully saved!</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Delete confirmation</h5>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid alert alert-danger" id="successContainer">
+                    <div class="row">
+                        <div class="col-md-12 mx-auto text-center">
+                            <label id="successMsg" class="font-weight-bold" style="color: darkred;">Are you sure you would like to delete this expense?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mx-auto text-center">
+                            <label id="successMsg" style="color: darkred;">This action is permanent and cannot be undone.</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mx-auto text-center">
+                            <button class="btn btn-danger" onclick="$('#deleteModal').modal('hide');">Yes, delete this expense</button>
+                            <button class="btn btn-outline-danger" onclick="$('#deleteModal').modal('hide');">No, keep it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -135,8 +186,11 @@
 <script>
     $(document).ready(function () {
 
-
-
+        $(".delete").on('click', function (event) {
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+            $("#deleteModal").modal("show");
+        });
 
         $(function () {
             var oTable = $('#expenseTable').DataTable({
@@ -183,8 +237,13 @@
                         var expense = document.getElementById('validationExpense').value;
                         var cost = document.getElementById('validationCost').value;
                         var date = document.getElementById('validationFrequency').value;
-                        t.row.add([expense, cost, date]).draw(false);
+                        t.row.add([expense, cost, date, "<td><button class='btn small btn-danger delete'><i class='fa fa-times'></i></button></td>"]).draw(false);
                         clearForm();
+
+                        $('#successModal').modal('show');
+                        setTimeout(function () {
+                            $('#successModal').modal('hide');
+                        }, 2000);
                     }
                     form.classList.add('was-validated');
                 }, false);
