@@ -24,36 +24,54 @@
                 <div class="form-row">
                     <div class="form-group col-md-3 mx-auto">
                         <label for="validationCustom01" class="font-weight-bold">First name</label>
-                        <input type="text" class="form-control form-control-lg" id="validationCustom01" placeholder="John" required>
+                        <input type="text" class="form-control form-control-lg" id="validationCustom01" minlength="1" placeholder="John" required>
+                        <div class="invalid-feedback">
+                            First name is required.
+                        </div>
                     </div>
 
                     <div class="form-group col-md-3 mx-auto">
                         <label for="validationCustom02" class="font-weight-bold">Last Name</label>
-                        <input type="text" class="form-control form-control-lg" id="validationCustom02" placeholder="Doe" required>
+                        <input type="text" class="form-control form-control-lg" id="validationCustom02" minlength="1" placeholder="Doe" required>
+                        <div class="invalid-feedback">
+                            Last name is required.
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-3 mx-auto">
                         <label for="validationCustom03" class="font-weight-bold">Username</label>
-                        <input type="text" class="form-control form-control-lg" id="validationCustom03" placeholder="JohnDoe123" required>
+                        <input type="text" class="form-control form-control-lg" id="txtUsername" minlength="7" placeholder="JohnDoe123" required>
+                        <div class="invalid-feedback">
+                            Username is required and must be at least 7 characters long.
+                        </div>
                     </div>
 
                     <div class="form-group col-md-3 mx-auto">
                         <label for="validationCustom04" class="font-weight-bold">E-mail</label>
                         <input type="email" class="form-control form-control-lg" id="validationCustom04" placeholder="johndoe@email.com" required>
+                        <div class="invalid-feedback">
+                            A valid e-mail address is required.
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-3 mx-auto">
                         <label for="validationCustom05" class="font-weight-bold">Password</label>
-                        <input type="password" class="form-control form-control-lg" id="validationCustom05" placeholder="********" required>
+                        <input type="password" class="form-control form-control-lg" id="validationCustom05" minlength="7" placeholder="********" required>
+                        <div class="invalid-feedback">
+                            Password must be at least 7 characters long.
+                        </div>
                     </div>
 
                     <div class="form-group col-md-3 mx-auto">
                         <label for="validationCustom06" class="font-weight-bold">Confirm password</label>
-                        <input type="password" class="form-control form-control-lg" id="validationCustom06" placeholder="********" required>
+                        <input type="password" class="form-control form-control-lg" id="validationCustom06" minlength="7" placeholder="********" required>
+                        <div class="invalid-feedback">
+                           Passwords do not match.
+                        </div>
                     </div>
                 </div>
 
