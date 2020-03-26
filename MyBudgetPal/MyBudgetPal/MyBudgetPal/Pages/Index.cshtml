@@ -24,13 +24,19 @@
                 <div class="form-row">
                     <div class="form-group col-md-3 mx-auto">
                         <label for="validationCustom01" class="font-weight-bold">Email</label>
-                        <input type="text" class="form-control form-control-lg" id="validationCustom01" placeholder="Enter email" required>
+                        <input type="email" class="form-control form-control-lg" id="validationCustom01" placeholder="Enter email" required>
+                        <div class="invalid-feedback">
+                            E-mail is invalid.
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3 mx-auto">
                         <label for="validationCustom02" class="font-weight-bold">Password</label>
                         <input type="password" class="form-control form-control-lg" id="validationCustom02" placeholder="Password" required>
+                        <div class="invalid-feedback">
+                            Incorrect password.
+                        </div>
                         <a class="btn btn-link" href="/PasswordRecovery">Forgot password?</a>
                     </div>
                 </div>
